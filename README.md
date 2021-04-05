@@ -1,16 +1,16 @@
 # Zoho CRM Widget JavaScript Assessment
 
-Welcome! Here we will guide you to setup a Zoho CRM widget to enable you to design your very own *awe-inspiring* Zoho CRM widget. Widgets are essentially a small `<iframe>` containing a simple web app. End-users access widgets by clicking a button on single records or a list of records. Your job will be to develop and deploy your widget to Zoho CRM.
+Welcome! Here we will guide you to setup a Zoho CRM widget to enable you to design your very own *awe-inspiring* Zoho CRM widget. Widgets are essentially a small `<iframe>` containing a simple web app within Zoho CRM. End-users access widgets by clicking a button on single records or a list of records. Your job will be to develop and deploy your widget to Zoho CRM.
 
 You'll need some background in the following areas to follow along:
 - JavaScript (with Promises)
 - HTML & CSS
-- NPM and Node.js installed
+- NPM and Node.js installed on local machine
 - Zoho CRM Modules & Fields
 
 
 ## Project Overview
-Alrighty, let's go over what exactly you're going to build! Adding Notes to records in CRMs is a very common task. Currently in Zoho CRM when you create a new Note on a record, it doesn't appear on associated modules. For example, let's say we work for the leading bobblehead manufacturer in the world and we have a new Account, The Dallas Mavericks. Since they're a needy client, we're going to be making tons of Notes to make sure we get everything right. Of course, we don't just want those Notes on the Maverick's Account record, but we want those to be seen on all the Contact records associated to the Mavericks's Account. That's right, the notes need to be seen on Mark Cuban and Luka Doncic's Contact records.
+Alrighty, let's go over what exactly you're going to build. Adding Notes to records in CRMs is a very common task. Currently when you create a new Note on a record, it doesn't appear on associated modules. For example, let's say we work for the leading bobblehead manufacturer in the world and we have a new Account, the Dallas Mavericks. Since they're a needy client, we're going to be making tons of Notes to make sure we get everything right. Of course, we don't just want those Notes on the Maverick's Account record, but we want those notes to be seen on Mark Cuban and Luka Doncic's Contact records, which are associated to the Mavericks's Account.
 
 Your job is to create a Zoho CRM Widget on an Account record that allows you to input text for a Note and select which related Contacts and Orders should get the Note as well. You must then create the Notes for the Account and the selected Contacts and Orders.
 
@@ -123,8 +123,19 @@ ZOHO.embeddedApp.on("PageLoad",function(entity)
 ZOHO.embeddedApp.init();
 ```
 
+Now you can use the Zoho CRM API in the following way:
+```javascript
+ZOHO.CRM.API.getRecord({Entity:"Leads",RecordID:"1000000030132"})
+.then(function(data){
+	console.log(data)
+})
+```
+
 ## How We Will Evaluate Your App
-The 
-- Intuitive and clear to use
-- Meets the project requirements
-- Looks great
+We really want to see you shine. Show off your skills! We assume you can be understand the business use-case well enought that your web-dev creativity can shine.
+
+Here are some specific things we are looking for:
+- Intuitive to use
+- Looks good within Zoho CRM
+- Works as expected
+- Adding additional details or functionality. Be creative!
